@@ -12,6 +12,8 @@ set mouse=a
 set smartindent
 set expandtab
 set clipboard+=unnamedplus
+set updatetime=300
+set timeoutlen=100
 
 "Plugins
 call plug#begin()
@@ -42,7 +44,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let g:user_emmet_leader_key='m'
 
 "Tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <F2> :TagbarToggle<CR>
 
 "Coc
 inoremap <silent><expr> <TAB>
