@@ -22,3 +22,8 @@ sudo usermod -aG $USER_GROUPS $USER
 
 #Enable default network
 sudo virsh net-autostart default
+
+#Add git
+git config --global user.email "nvolkov.job@gmail.com"
+git config --global user.name "landaybronstein"
+
