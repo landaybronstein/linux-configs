@@ -7,7 +7,7 @@ sudo apt upgrade -y
 #Installing packages
 PACKAGES="dkms firmware-linux firmware-linux-nonfree
 clang clangd llvm lldb clang-tidy valgrind gdb universal-ctags git cmake-gui
-python3-dev python3-pip python-is-python3 python3-full
+python3-dev python3-pip python-is-python3 python3-full python3-pynvim
 ranger vlc curl wget filezilla qbittorrent
 pkg-config libglfw3-dev libassimp-dev libgl1-mesa-dev libvulkan-dev
 libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
@@ -26,4 +26,7 @@ sudo virsh net-autostart default
 #Add git
 git config --global user.email "nvolkov.job@gmail.com"
 git config --global user.name "landaybronstein"
+
+#Add Flathub
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
