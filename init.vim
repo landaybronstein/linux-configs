@@ -6,20 +6,23 @@ set number
 set autoindent
 set tabstop=2
 set shiftwidth=2
-set smarttab
 set softtabstop=2
 set mouse=a
+set smarttab
 set smartindent
 set expandtab
 set clipboard+=unnamedplus
 set updatetime=300
-set timeoutlen=100
+set timeoutlen=300
+set autoread
+set termguicolors
 
 "Plugins
 call plug#begin()
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
+Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'vim-airline/vim-airline'
@@ -31,17 +34,24 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
+"NerdTree
+nnoremap <C-f> :NERDTreeFind<CR>
+map <C-b> :call NERDTreeToggleAndRefresh()<CR>
+
+function NERDTreeToggleAndRefresh()
+  :NERDTreeToggle
+  if g:NERDTree.IsOpen()
+    :NERDTreeRefreshRoot
+  endif
+endfunction
+
 "Theme
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 let g:airline_theme='base16_gruvbox_dark_hard'
 
-"NerdTree
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
 "Emmet config
-let g:user_emmet_leader_key='m'
+let g:user_emmet_leader_key='<C-Z>'
 
 "Tagbar
 nmap <F2> :TagbarToggle<CR>
@@ -53,8 +63,6 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
