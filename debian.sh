@@ -4,6 +4,11 @@
 sudo apt update
 sudo apt upgrade -y
 
+#Adding conrib, non-free
+sudo apt install software-properties-common -y
+sudo apt-add-repository contrib non-free -y
+sudo apt update
+
 #Installing packages
 PACKAGES="dkms firmware-linux firmware-linux-nonfree
 clang clangd llvm lldb clang-tidy valgrind gdb universal-ctags git cmake-gui
@@ -29,4 +34,3 @@ git config --global user.name "landaybronstein"
 
 #Add Flathub
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
