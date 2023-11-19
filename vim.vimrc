@@ -16,19 +16,26 @@ set updatetime=300
 set timeoutlen=300
 set autoread
 set termguicolors
+set nowrap
 syntax on
 filetype plugin indent on
 
 "Plugins
 call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+Plug 'sainnhe/gruvbox-material'
+Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/everforest'
 Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {
@@ -47,10 +54,22 @@ function NERDTreeToggleAndRefresh()
   endif
 endfunction
 
-"Theme
-colo gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:airline_theme='gruvbox'
+"Theme OneDark
+"let g:airline_theme='onedark'
+"let g:onedark_termcolors=256
+"colorscheme onedark
+
+"Theme Everforest
+"colorscheme everforest
+"let g:everforest_background = 'hard'
+"let g:airline_theme='everforest'
+"set background=dark
+
+"Gruvbox Material
+colorscheme gruvbox-material
+let g:airline_theme='base16_gruvbox_dark_hard'
+let g:gruvbox_material_background = 'hard'
+set background=dark
 
 "Emmet config
 let g:user_emmet_leader_key='<C-Z>'
