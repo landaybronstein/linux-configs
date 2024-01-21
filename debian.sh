@@ -12,11 +12,11 @@ sudo apt update
 #Installing packages
 PACKAGES="dkms firmware-linux firmware-linux-nonfree
 clang clangd llvm lldb clang-tidy valgrind gdb universal-ctags git cmake-gui
-python3-dev python3-pip python-is-python3 python3-full python3-pynvim
+python3-dev python3-pip python-is-python3 python3-venv
 ranger vlc curl wget filezilla qbittorrent
 pkg-config libglfw3-dev libassimp-dev libgl1-mesa-dev libvulkan-dev
 libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev
-flatpak snapd podman
+flatpak podman
 qemu-kvm qemu-system qemu-utils 
 libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager"
 sudo apt -y install $PACKAGES
