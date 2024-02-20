@@ -22,7 +22,7 @@ libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-
 sudo apt -y install $PACKAGES
 
 #Add user to groups
-USER_GROUPS="libvirt,libvirt-qemu,kvm,input,disk"
+USER_GROUPS="libvirt,libvirt-qemu,kvm,input,disk,dialout"
 sudo usermod -aG $USER_GROUPS $USER
 
 #Enable default network
